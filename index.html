@@ -112,7 +112,7 @@ $("#look_tv_here").keyup(function(){
 function load_tv(action, page)
 {
     let data_payload = "";
-    let data_api = "app/getData.php";
+    let data_api = "app/getData.html";
     let squery = $("#look_tv_here").val();
     
     if(page == null || page == undefined || page == "")
@@ -223,7 +223,7 @@ function play_the_video(e)
 {
     let media_id = $(e).attr("data-id");
     $.ajax({
-        "url": "app/getData.php",
+        "url": "app/getData.html",
         "type": "GET",
         "data": "action=details&id=" + media_id,
         "beforeSend": function(xhr)
@@ -301,7 +301,7 @@ function stopJWPlayer()
 
 $("#open_settings").on("click", function(){
     $.ajax({
-        "url" : "app/getData.php",
+        "url" : "app/getData.html",
         "data": "action=get_m3ulink",
         "type": "GET",
         "beforeSend": function(xhr)
